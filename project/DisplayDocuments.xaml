@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.DisplayDocuments">
+
+    <StackLayout Padding="20">
+
+        <!-- Document List Title -->
+        <Label Text="Uploaded Documents"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <!-- ListView to display the documents -->
+        <ListView x:Name="uploadedDocumentsList" 
+                  ItemTapped="OnItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Title}" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding Description}" 
+                                   FontSize="14" 
+                                   TextColor="Gray" />
+                            <!-- Open Button -->
+                            <Button Text="Open" 
+                                    CommandParameter="{Binding .}" 
+                                    Clicked="OnOpenButtonClicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

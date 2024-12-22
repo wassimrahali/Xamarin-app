@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.AuthPage"
+             BackgroundColor="#F5F5F5"
+             Title="Welcome"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <!-- Gradient Background -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#667eea" Offset="0.0" />
+                <GradientStop Color="#764ba2" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackLayout Padding="30" Spacing="20" 
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center"
+                     WidthRequest="350">
+
+            <!-- Logo/Brand -->
+            <Image Source="https://github.com/gheorghedarle/Xamarin-ToDoApp/blob/main/ToDoApp/ToDoApp/ToDoApp.Android/Resources/drawable/flame.png?raw=true"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit" />
+
+            <!-- Title -->
+            <Label Text="Sign In"
+                   FontSize="24"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+            <!-- Username Entry -->
+            <Entry Placeholder="Username"
+                   x:Name="UsernameEntry"
+                   Keyboard="Default"
+                   TextColor="Black"
+                   PlaceholderColor="LightGray"
+                   BackgroundColor="White"
+                   FontSize="16"
+                   HeightRequest="50"/>
+
+            <!-- Password Entry -->
+            <Entry Placeholder="Password"
+                   x:Name="PasswordEntry"
+                   IsPassword="True"
+                   TextColor="Black"
+                   PlaceholderColor="LightGray"
+                   BackgroundColor="White"
+                   FontSize="16"
+                   HeightRequest="50"/>
+
+            
+
+            <!-- Login Button -->
+            <Button Text="LOGIN"
+                    TextColor="White"
+                    BackgroundColor="#667eea"
+                    Clicked="OnLoginClicked"
+                    CornerRadius="25"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    BorderWidth="0"/>
+
+            <!-- Forgot Password Link -->
+            <Label Text="Forgot Password?"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   FontSize="14">
+                <Label.GestureRecognizers>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.DocumentPage">
+
+    <StackLayout Padding="20">
+        <!-- Title and Description Inputs -->
+        <Entry x:Name="titleEntry" Placeholder="Enter document title" FontSize="18" />
+        <Editor x:Name="descriptionEditor" Placeholder="Enter document description" FontSize="18" HeightRequest="100" />
+
+        <!-- Pick PDF Button -->
+        <Button Text="Pick PDF" Clicked="OnPickPdfClicked"
+                BackgroundColor="DarkSeaGreen"
+                />
+
+        <!-- PDF Preview -->
+        <Image x:Name="pdfPreviewImage" HeightRequest="150" />
+
+        <!-- Submit Button -->
+        <Button Text="Submit Document" Clicked="OnSubmitDocumentClicked"
+                BackgroundColor="HotPink"/>
+
+        <!-- Display Documents Button -->
+        <Button Text="Display Documents"
+                BackgroundColor="Goldenrod"
+                Clicked="OnDisplayDocumentsClicked" />
+
+        <!-- ListView for displaying uploaded documents -->
+        <ListView x:Name="uploadedDocumentsList" ItemTapped="OnDocumentTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="2">
+                            <Label Text="{Binding Title}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Description}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="12" TextColor="Gray" />
+
+                            <!-- Delete Button -->
+                            <Button Text="Delete" 
+                                    FontSize="15" 
+                                    BackgroundColor="red"
+                                    CommandParameter="{Binding .}" 
+                                    Clicked="OnDeleteDocumentClicked" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

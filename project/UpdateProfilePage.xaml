@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.UpdateProfilePage"
+             Title="Update Profile">
+    <StackLayout Padding="20" Spacing="15">
+        <!-- First Name -->
+        <Entry x:Name="FirstNameEntry"
+               Placeholder="Enter your first name"
+               Text="{Binding Student.FirstName}"
+               FontSize="18" />
+
+        <!-- Class -->
+        <Entry x:Name="ClassEntry"
+               Placeholder="Enter your class"
+               Text="{Binding Student.Classe}"
+               FontSize="18" />
+
+        <!-- Moyenne -->
+        <Entry x:Name="MoyenneEntry"
+               Placeholder="Enter your moyenne"
+               Text="{Binding Student.Moyenne}"
+               Keyboard="Numeric"
+               FontSize="18" />
+
+        <!-- Update Button -->
+        <Button Text="Save Changes"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Clicked="OnSaveButtonClicked" />
+    </StackLayout>
+</ContentPage>

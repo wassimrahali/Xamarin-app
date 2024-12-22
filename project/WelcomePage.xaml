@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.WelcomePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid
+            BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#121212}"
+            RowDefinitions="*, Auto, Auto, Auto, Auto">
+            <!-- Welcome Image -->
+            <Image
+                Grid.Row="0"
+                Aspect="AspectFit"
+                Source="https://github.com/gheorghedarle/Xamarin-ToDoApp/blob/main/ToDoApp/ToDoApp/ToDoApp.Android/Resources/drawable/welcome.png?raw=true"
+                HorizontalOptions="EndAndExpand"
+                Margin="20, 0, 0, 0" />
+
+            <!-- Headline Label -->
+            <Label
+                Grid.Row="1"
+                HorizontalTextAlignment="Center"
+                Margin="30, 20, 30, 10"
+                FontSize="24"
+                FontAttributes="Bold"
+                Text="Manage your daily tasks in one place"
+                TextColor="{AppThemeBinding Light=#000000, Dark=#FFFFFF}" />
+
+            <!-- Description Label -->
+            <Label
+                Grid.Row="2"
+                HorizontalTextAlignment="Center"
+                Margin="0, 0, 0, 30"
+                FontSize="16"
+                Text="Organize your daily tasks"
+                TextColor="{AppThemeBinding Light=#757575, Dark=#B3B3B3}" />
+
+            <!-- Buttons Stack -->
+            <StackLayout 
+                Grid.Row="3"
+                Orientation="Horizontal" 
+                HorizontalOptions="Center" 
+                Spacing="20"
+                Padding="20,10,20,10">
+
+                <!-- Login as Student Button -->
+                <Button
+                    BackgroundColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}"
+                    TextColor="{AppThemeBinding Light=#FFFFFF, Dark=#000000}"
+                    Text="Login As Student"
+                    FontSize="10"
+                    CornerRadius="10"
+                    WidthRequest="120"
+                    HeightRequest="50"
+                    Clicked="OnLoginClickedStudent" />
+
+                <!-- Login as Admin Button -->
+                <Button
+                    BackgroundColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}"
+                    TextColor="{AppThemeBinding Light=#FFFFFF, Dark=#000000}"
+                    Text="Login As Admin"
+                    FontSize="10"
+                    CornerRadius="10"
+                    WidthRequest="120"
+                    HeightRequest="50"
+                    Clicked="OnLoginClicked" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

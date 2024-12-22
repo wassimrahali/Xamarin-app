@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.SignupStudent"
+             Title="Signup Student"
+             BackgroundColor="{AppThemeBinding Light=#F5F5F5, Dark=#121212}">
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="25" 
+                     VerticalOptions="Center"
+                     HorizontalOptions="Fill">
+
+            <!-- Signup Image -->
+            <Image Source="https://cdn-icons-png.flaticon.com/512/219/219983.png"
+                   HeightRequest="250"
+                   WidthRequest="250"
+                   HorizontalOptions="Center"
+                   Aspect="AspectFit" />
+
+            <!-- Title -->
+            <Label Text="Create Account"
+                   FontSize="24"
+                   TextColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold" />
+
+            <!-- Full Name Entry -->
+            <Frame BorderColor="Transparent" 
+                   BackgroundColor="Transparent" 
+                   Padding="0">
+                <Entry x:Name="FullNameEntry" 
+                       Placeholder="Full Name"
+                       FontSize="18"
+                       TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                       PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+            </Frame>
+
+            <!-- CIN Entry -->
+            <Frame BorderColor="Transparent" 
+                   BackgroundColor="Transparent" 
+                   Padding="0">
+                <Entry x:Name="CINEntry" 
+                       Placeholder="CIN" 
+                       Keyboard="Numeric"
+                       FontSize="18"
+                       TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                       PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+            </Frame>
+
+            <!-- Password Entry -->
+            <Frame BorderColor="Transparent" 
+                   BackgroundColor="Transparent" 
+                   Padding="0">
+                <Entry x:Name="PasswordEntry" 
+                       Placeholder="Password" 
+                       IsPassword="True"
+                       FontSize="18"
+                       TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                       PlaceholderColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+            </Frame>
+
+            <!-- Classe Picker -->
+            <Frame BorderColor="Transparent" 
+                   BackgroundColor="Transparent" 
+                   Padding="0">
+                <Picker x:Name="ClassePicker"
+                        Title="Select Class"
+                        FontSize="18"
+                        TextColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}"
+                        TitleColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+            </Frame>
+
+            <!-- Sign Up Button -->
+            <Button Text="Sign Up"
+                    BackgroundColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}"
+                    TextColor="{AppThemeBinding Light=#FFFFFF, Dark=#000000}"
+                    FontSize="18"
+                    CornerRadius="25"
+                    Clicked="OnSignupButtonClicked" />
+
+            <!-- Login Redirect -->
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account? " 
+                              FontSize="16" 
+                              FontAttributes="Italic"
+                              TextColor="{AppThemeBinding Light=Gray, Dark=LightGray}" />
+                        <Span FontSize="16" 
+                              FontAttributes="Bold"
+                              TextColor="{AppThemeBinding Light=#1976D2, Dark=#BB86FC}">
+                            <Span.GestureRecognizers>
+                            </Span.GestureRecognizers>
+                            Login
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project.HomeAdmin"
+             Title="Admin Home">
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Image -->
+        <Image Source="https://images.freeimages.com/fic/images/icons/2526/bloggers/256/admin.png" 
+               HeightRequest="250" />
+
+        <!-- Grid to contain 4 rectangles -->
+        <Grid RowSpacing="10" ColumnSpacing="10">
+            <!-- Define the structure for the grid -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- First Rectangle (Add Moyenne) -->
+            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="LightBlue" 
+                   HeightRequest="100" VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand" 
+                   BorderColor="Transparent">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRectangleClicked" CommandParameter="Add Moyenne" />
+                </Frame.GestureRecognizers>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Students Management" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Second Rectangle (Add Document) -->
+            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="LightGreen" 
+                   HeightRequest="100" VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand" 
+                   BorderColor="Transparent">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRectangleClicked" CommandParameter="Add Document" />
+                </Frame.GestureRecognizers>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label HorizontalTextAlignment="Center" Text="Add Document" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Third Rectangle (Display Documents) -->
+            <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="LightSalmon" 
+                   HeightRequest="100" VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand" 
+                   BorderColor="Transparent">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRectangleClicked" CommandParameter="Display Documents" />
+                </Frame.GestureRecognizers>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Display Documents" HorizontalTextAlignment="Center" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Fourth Rectangle (More) -->
+            <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="Plum" 
+                   HeightRequest="100" VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand" 
+                   BorderColor="Transparent">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRectangleClicked" CommandParameter="More" />
+                </Frame.GestureRecognizers>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="More" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </StackLayout>
+</ContentPage>
